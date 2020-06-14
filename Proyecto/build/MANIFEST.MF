@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: UPeU Sistemas
+Main-Class: ProgramaPrincipal
+X-COMMENT: Ejemplo de Empaquetado
