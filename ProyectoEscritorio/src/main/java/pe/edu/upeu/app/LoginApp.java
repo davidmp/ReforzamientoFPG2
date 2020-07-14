@@ -1,5 +1,6 @@
 package pe.edu.upeu.app;
 
+
 import javax.swing.*;
 import java.awt.event.*;
 import org.jdal.swing.form.BoxFormBuilder;
@@ -9,7 +10,7 @@ public class LoginApp extends JDialog implements ActionListener {
     private static final long serialVersionUID = 1L;
 
     JTextField usuarioTxt=new JTextField();
-    JTextField claveTxt=new JTextField();
+    JPasswordField claveTxt=new JPasswordField();
     JButton btnIngresar=new JButton("Ingresar");
 
     public LoginApp(){        
@@ -17,6 +18,7 @@ public class LoginApp extends JDialog implements ActionListener {
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.setSize(400, 300);
         this.setVisible(true);
+        
     }
 
     public JComponent construir(){
@@ -36,12 +38,21 @@ public class LoginApp extends JDialog implements ActionListener {
         fb.row(); 
         fb.add(btnIngresar);
         fb.endBox(); 
+        btnIngresar.addActionListener(this);
         return fb.getForm();    
     }
 
     @Override
     public void actionPerformed(ActionEvent e) { 
+        System.out.println("Holasassss");
+        if(e.getSource()==btnIngresar){
+            if(usuarioTxt.getText().equals("davidmp") && claveTxt.getText().equals("123456")){
+                new MainGUI2();
+                this.dispose();            
+            }
 
+        }
+        
     }
 
 
