@@ -1,51 +1,45 @@
 package pe.edu.upeu.app;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
+import org.jdal.swing.form.BoxFormBuilder;
 
-public class LoginApp extends JFrame implements ActionListener {
+public class LoginApp extends JDialog implements ActionListener {
     
     private static final long serialVersionUID = 1L;
 
-    JPanel panel;
-    JLabel usuarioLabel;
-    JLabel claveLabel;
-    JTextField usuarioTxt;
-    JTextField claveTxt;
-    JButton btnIngresar;
+    JTextField usuarioTxt=new JTextField();
+    JTextField claveTxt=new JTextField();
+    JButton btnIngresar=new JButton("Ingresar");
 
-    public LoginApp(){
-        this.setTitle("Login");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-        this.setSize(300, 150);
-        panel = new JPanel();
-
-        usuarioLabel=new JLabel("Usuario:");
-        usuarioLabel.setBounds(10, 10, 80, 25);        
-        usuarioTxt = new JTextField(20);
-        usuarioTxt.setBounds(100, 10, 160, 25);
-
-        claveLabel=new JLabel("Clave:");
-        claveLabel.setBounds(10, 40, 80, 25);
-        claveTxt = new JTextField(20);
-        claveTxt.setBounds(100, 40, 160, 25);
-
-		btnIngresar = new JButton("login");
-		btnIngresar.setBounds(10, 80, 80, 25);        
-
-        panel.add(usuarioLabel);
-        panel.add(usuarioTxt);
-        panel.add(claveLabel);
-        panel.add(claveTxt);
-        panel.add(btnIngresar);
-
-        this.add(panel);
+    public LoginApp(){        
+        this.add(construir());
+        this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        this.setSize(400, 300);
         this.setVisible(true);
     }
 
+    public JComponent construir(){
+        BoxFormBuilder fb = new BoxFormBuilder(BorderFactory.createTitledBorder(("Login")));
+        fb.row();                       // start a new base component row
+        fb.startBox();                  // add new simple box     
+        fb.setFixedHeight(true);        // fix the height of this simple box
+        fb.row();                       // add new row in the new simpleBox
+        fb.add("Usuario: ", usuarioTxt);       // add the name text box (this call increment the cursor by two). 
+        fb.row(); 
+        fb.add("Clave: ", claveTxt);
+        fb.endBox();
+        
+        fb.row(); 
+        fb.startBox();
+        fb.setFixedHeight(true);
+        fb.row(); 
+        fb.add(btnIngresar);
+        fb.endBox(); 
+        return fb.getForm();    
+    }
 
-    //@Override
+    @Override
     public void actionPerformed(ActionEvent e) { 
 
     }

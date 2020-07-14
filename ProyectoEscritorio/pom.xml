@@ -25,6 +25,13 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.jdal/jdal-swing -->
+    <dependency>
+        <groupId>org.jdal</groupId>
+        <artifactId>jdal-swing</artifactId>
+        <version>2.0.0</version>
+    </dependency>    
+    
   </dependencies>
 
   <build>
