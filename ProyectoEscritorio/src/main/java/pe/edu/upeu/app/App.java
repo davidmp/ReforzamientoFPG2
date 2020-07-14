@@ -4,6 +4,7 @@ import pe.edu.upeu.modelo.Producto;
 import pe.edu.upeu.utils.LeerArchivo;
 
 public class App {
+    
     public static void main( String[] args ){
         System.out.println( "Hello World!" );
         
@@ -47,6 +48,9 @@ public class App {
         catPro.setNombreCat("Pollo 1/2");
         crud.crearContenido(aqc, catPro);
         crud.imprimirLista(crud.listarContenido(aqc));
-        new MainGUI2();
+        //new MainGUI2();
+
+
+        new LoginApp();
     }
 }
