@@ -8,7 +8,6 @@ import org.jdal.swing.form.BoxFormBuilder;
 public class LoginApp extends JDialog implements ActionListener {
     
     private static final long serialVersionUID = 1L;
-
     JTextField usuarioTxt=new JTextField();
     JPasswordField claveTxt=new JPasswordField();
     JButton btnIngresar=new JButton("Ingresar");
@@ -17,8 +16,7 @@ public class LoginApp extends JDialog implements ActionListener {
         this.add(construir());
         this.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         this.setSize(400, 300);
-        this.setVisible(true);
-        
+        this.setVisible(true);        
     }
 
     public JComponent construir(){
@@ -50,7 +48,6 @@ public class LoginApp extends JDialog implements ActionListener {
                 new MainGUI2();
                 this.dispose();            
             }
-
         }
         
     }
